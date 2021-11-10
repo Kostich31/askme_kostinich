@@ -1,0 +1,26 @@
+.user {
+	margin-top: 0.5%;
+	text-align: center;
+}
+
+
+.login_form {
+	margin-top: 3%;
+}
+
+.form_log {
+	margin-top: 3%;
+}
+
+input:invalid {
+	border: 2px dashed rgb(212, 125, 125);
+}
+  
+input:valid {
+	border: 2px solid black;
+}
+
+#invisible {
+	color: red;
+	display: none;
+}
