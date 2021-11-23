@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="row">
+    <div class="col-3">
+      <img src="{% static "img/avatar_30.jpg" %}" id="main_ava">
+      <div class="like">
+        <button type ="button" class="plus_btn">&#128077</span> </button>
+        <span class="counter">0</span>
+        <button type ="button" class="minus_btn">&#128078</span> </button>
+      </div>
+    </div>
+    <div class="col-9">
+        <h3 class="title"><a href="{% url 'one_question' pk=question.id %}">{{ question.title }}</a></h3>
+        <div id="text_question">
+            {{ question.text }}
+        </div>
+        <div class="row_in_question">
+            <a href="{% url 'one_question' pk=question.id %}" class="Answer_string">Answer(3)</a>
+            Tags:
+                {% for tag in tags %}
+                <a href="{% url "tag" tag=tag %}" class="black-jeck">{{ tag }}</a>
+                {% endfor %}
+        </div>
+    </div>
+</div>

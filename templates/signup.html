@@ -1,0 +1,42 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% block link %}
+<link href="{% static "css/signup.css" %}" rel="stylesheet">
+{% endblock link %}
+    
+{% block content %}
+<h2 id="new_question">Sign Up</h2>
+<form class="login_form" method="post" name="form" onsubmit="return validated()">
+  <div class="row logs">
+    <div class="col-2">Login</div>
+    <div class="col-4">      
+      <input type="text" name="user" placeholder="login"></div>
+    </div>
+    <div class="row logs">
+    <div class="col-2">Email</div>
+    <div class="col-4">      
+      <input type="email" name="user" placeholder="Email"></div>
+    </div>
+    <div class="row logs">
+    <div class="col-2">NickName</div>
+    <div class="col-4">      
+      <input type="text" name="user" placeholder="NickName"></div>
+    </div>
+    <div class="row logs">
+      <div class="col-2">Password</div>
+      <div class="col-4"><input type="Password" name="Password" placeholder="Password" minlength="8">      
+      </div>
+    </div>
+     <div class="row logs">
+      <div class="col-2">Repeat password</div>
+      <div class="col-4"><input type="Password" name="Password" placeholder="Repeat password" minlength="8">      
+      </div>
+    </div>
+    <div class="row logs">
+      <div class="col-2">Upload your avatar:</div>
+      <div class="col-4"><input required type="file" id="g5" name="img0">
+        <input required type="submit" class="btn btn-outline-secondary form_log" id="hidden" value="Sign up">
+      </div>
+    </div>
+  </form>
+{% endblock content %}

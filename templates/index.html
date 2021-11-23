@@ -1,0 +1,20 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="new_hot_question">
+     New Question  
+     <a href="{% url 'index' %}">Hot Question</a>
+   </div>
+    {% for question in questions %}
+        {% include "include/singlequestion.html" %}
+    {% endfor %}
+{% endblock content %}
+
+{% block pagination %}
+{% include "include/pagination.html" %}
+{% endblock pagination %}
+{% block linkjs %}
+ <script type="text/javascript" src="{% static 'js/like.js' %}"></script>
+{% endblock linkjs %}
+ </html>

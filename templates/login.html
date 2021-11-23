@@ -1,0 +1,26 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block link %}
+<link href="{% static "css/login.css" %}" rel="stylesheet">
+{% endblock link %}
+
+{%block content%}
+<h2 id="new_question">Log In</h2>
+    <p id="invisible">Sorry, wrong password</p>
+    <form class="login_form" method="post" name="form">
+      <div class="row">
+        <div class="col-2">Login</div>
+        <div class="col-4">      
+          <input type="text" name="user" placeholder="login" required></div>
+        </div>
+        <div class="row">
+          <div class="col-2">Password</div>
+          <div class="col-4">
+            <input type="Password" name="Password" placeholder="Password" minlength="6" required>
+            <input required type="submit" class="btn btn-outline-secondary form_log" id="hidden" value="Log in">
+            <p class="form_log"><a href="#1">Create new account</a></p>
+          </div>
+        </div>
+    </form>
+{% endblock content %}
