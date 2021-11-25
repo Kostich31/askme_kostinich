@@ -22,8 +22,8 @@ answers = [
 list_all_tags = ['Perl', 'Python', 'TechnoPark', 'MYSQL', 'django', 'Mail.ru', 'Shuvaeva', 'Firefox']
 
 
-def paginate(objects_list, request, per_page=5):
-    paginator = Paginator(questions, 5)
+def paginate(data, request, per_page=5):
+    paginator = Paginator(data, 5)
     page_number = request.GET.get('page')
     return paginator.get_page(page_number)
 
@@ -43,7 +43,8 @@ def login(request):
 
 def question(request, pk):
      question = questions[pk]
-     return render(request, "question.html", {"question": question, "answers": answers,
+     answerss = paginate(answers, request,3)
+     return render(request, "question.html", {"question": question, "answers": answerss,
                                               "tags": sample(list_all_tags, 2)})
 
 

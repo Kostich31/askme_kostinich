@@ -12,9 +12,9 @@
 {% endblock content %}
 
 {% block pagination %}
-{% include "include/pagination.html" %}
+{% include "include/pagination.html" with content=questions %}
 {% endblock pagination %}
+
 {% block linkjs %}
  <script type="text/javascript" src="{% static 'js/like.js' %}"></script>
 {% endblock linkjs %}
- </html>

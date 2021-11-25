@@ -13,5 +13,5 @@
     {% endfor %}
 {% endblock content %}
 {% block pagination %}
-{% include "include/pagination.html" %}
+{% include "include/pagination.html" with content=questions %}
 {% endblock pagination %}

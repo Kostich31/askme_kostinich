@@ -6,36 +6,18 @@
 {% endblock link %}
 
 {% block content %}
-  <div class="row">
-    <div class="col-3">
-      <img src="{% static 'img/avatar_30.jpg' %}" id="main_ava">
-      <div class="like">
-        <button type ="button" class="plus_btn">&#128077</span> </button>
-        <span class="counter">0</span>
-        <button type ="button" class="minus_btn">&#128078</span> </button>
-      </div>
-    </div>
-    <div class="col-9">
-      <h3 class="title">{{ question.title }}</h3>
-      <div class="text" id="text_question">
-        {{ question.text }}
-      </div>
-      <div class="row_in_question">
-        Tags:
-          {% for tag in tags %}
-            <a href="{% url "tag" tag=tag %}" class="black-jeck">{{ tag }}</a>
-          {% endfor %}
-      </div>
-
-    </div>
-    <hr id="hr">
-  </div>
-
-{% for answer in answers %}
+{% include "include/singlequestion.html" %}
+<div class="answer block">
+  {% for answer in answers %}
     {% include "include/singleanswer.html" %}
-{% endfor %}
-  <form>
-    <textarea class="form-control"  rows="4" placeholder="Enter your answer here.."></textarea>
-    <button type="button" class="btn btn-secondary btn_answer">Answer</button>
-  </form>
+  {% endfor %}
+
+  {% include 'include/pagination.html' with content=answers %}
+</div>
+
+
+<form>
+  <textarea class="form-control"  rows="4" placeholder="Enter your answer here.."></textarea>
+  <button type="button" class="btn btn-secondary btn_answer">Answer</button>
+</form>
 {% endblock content %}
