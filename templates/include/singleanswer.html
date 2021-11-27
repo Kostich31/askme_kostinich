@@ -2,10 +2,11 @@
 
 <div class="row question">
     <div class="col-3">
-        <img src="{% static 'img/avatar_30.jpg' %}" id="main_ava">
+        <div class = "login"> {{ answer.author }} </div>
+        <div><img class="question_avatar" src={{ answer.author.avatar.url }}></div>
         <div class="like">
           <button type ="button" class="plus_btn">&#128077</span> </button>
-          <span class="counter">0</span>
+          <span class="counter">{{answer.rating}}</span>
           <button type ="button" class="minus_btn">&#128078</span> </button>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>

@@ -7,7 +7,7 @@ likes.forEach(like => {
   const minus = like.querySelector('.minus_btn');
   const counter_element = like.querySelector('.counter');
   
-  let counter = 0;
+  let counter = counter_element.textContent
   plus.addEventListener('click', () => {
     render(++counter, counter_element);
   });
