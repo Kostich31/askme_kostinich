@@ -10,6 +10,11 @@
 	margin-bottom: 10px;
 }
 
+
+.mid_block{
+    min-height: calc(100vh - 110px);
+}
+
 .row {
 	margin-top: 100px;
 }
@@ -41,8 +46,11 @@
 	width: 500%;
 }
 
-.search_bottom {
-	width: 15%;
+.btn_ask {
+    width: 40%;
+}
+.btn_search_li{
+    width: 20%;
 }
 
 .brand_askme {

@@ -8,45 +8,9 @@
   <link href="{% static 'css/common.css' %}" rel="stylesheet">
   {% block link %}
   {% endblock link %}
+  {% block header %}
+  {% endblock header %}
 </head>
-
-  <header>    
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand brand_askme" href="{% url "index" %}">AskKostinich</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item search">
-              <form class="d-flex">
-               <input class="form-control me-2 search_text" type="search" placeholder="Search" aria-label="Search">
-               <button class="btn btn-outline-success search_bottom" type="submit">ASK</button>
-             </form>
-           </li>
-           <li class="nav-item avatar">
-            <img src="{% static 'img/avatar_30.jpg' %}">
-          </li>
-          <li class="nav-item user">
-            <ul class="user_ul">
-             <li>
-               Kostya
-             </li>
-             <li>
-               <div>
-                <a href="{% url "settings" %}" class="href_settings"> Settings </a>
-                <a href="{% url "signup" %}"> log out </a>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      
-    </div>
-  </div>
-</nav>
-</header>
 
 <main class="flex-shrink-0">
  <div class="container">
@@ -89,7 +53,8 @@
 </div>
 </div>
 </div>
-{% block pagination %} {% endblock pagination %}
+{% block pagination %} 
+{% endblock pagination %}
 <footer>    
   <div class="container_footer">
     <span class="text-info">Kostinich Konstantin WEB-11 2021</span>

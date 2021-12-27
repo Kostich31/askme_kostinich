@@ -4,28 +4,20 @@
 {% block link %}
 <link href="{% static "css/ask.css" %}" rel="stylesheet">
 {% endblock link %}
-
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% load bootstrap4 %}
 {% block content %}
 <h2 id="new_question">New Question</h2>
-    <form class="ask_form" id="ask">
-      <div class="row">
-        <div class="col-1">Title</div>
-        <div class="col-10">
-          <input class="form-control" id="title" name="title" placeholder="Input title" required>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1">Text</div>
-        <div class="col-10">
-          <textarea class="form-control" id="title" name="text" rows="10" placeholder="Input text" required></textarea> 
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1">Tags</div>
-        <div class="col-10">
-          <input class="form-control" id="title" name="tags" placeholder="Input tags" required>
-        </div>
-      </div>
+<form class="ask_form" id="ask" method="POST" action="/ask/">
+  {% for error in error_message %}
+  <p class="error_log_message">{{ error }}</p>
+{% endfor %}
+{% csrf_token %}
+{% bootstrap_form form %}
+{% buttons %}
       <input required type="submit" class="btn btn-outline-secondary input_form" value="ASK!">
     </form>
+{% endbuttons %}
 {% endblock content %}

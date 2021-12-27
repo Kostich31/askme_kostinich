@@ -2,8 +2,6 @@
 	margin-top: 0.5%;
 	text-align: center;
 }
-
-
 .login_form {
 	margin-top: 3%;
 }
@@ -20,7 +18,6 @@ input:valid {
 	border: 2px solid black;
 }
 
-#invisible {
-	color: red;
-	display: none;
+.error_log_message {
+    color: red;
 }

@@ -1,6 +1,8 @@
 {% extends "include/base.html" %}
 {% load static %}
-
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
 {% block content %}
 <div class="new_hot_question">
     <a href="{% url 'index' %}">New Question</a>

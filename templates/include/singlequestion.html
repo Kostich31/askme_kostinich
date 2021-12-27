@@ -19,7 +19,7 @@
             <a href="{% url 'one_question' pk=question.id %}" class="Answer_string">Answer(3)</a>
             Tags:
                 {% for tag in questions %}
-                <a href="{% url "tag" tag=tag %}" class="black-jeck">{{ tag }}</a>
+                <a href="{% url "tag" tag %}" class="black-jeck">{{ tag.name }}</a>
                 {% endfor %}
         </div>
     </div>

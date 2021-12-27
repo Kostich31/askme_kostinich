@@ -6,7 +6,12 @@
 	width: 50%;
 }
 
-.form_log {
+.settings_form {
+    width: 70%;
+}
+
+
+.save_button {
 	margin-top: 4%;
 }
 

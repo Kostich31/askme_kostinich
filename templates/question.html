@@ -1,6 +1,9 @@
 {% extends "include/base.html" %}
 {% load static %}
-
+{% load bootstrap4 %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
 {% block link %}
 <link href="{% static "css/question.css" %}" rel="stylesheet">
 {% endblock link %}
@@ -17,7 +20,20 @@
 
 
 <form>
+  {% if user.is_authenticated %}
   <textarea class="form-control"  rows="4" placeholder="Enter your answer here.."></textarea>
+
   <button type="button" class="btn btn-secondary btn_answer">Answer</button>
+<form method="POST" action="{{ request.path }}" name="form" novalidate>
+<!--    <textarea class="form-control"  rows="4" placeholder="Enter your answer here.."></textarea>-->
+          {% csrf_token %}
+
+  {% bootstrap_form form %}
+
+    {% buttons %}
+  <button required type="submit" class="btn btn-secondary btn_answer">Answer</button>
+    {% endbuttons %}
 </form>
+</form>
+{% endif %}
 {% endblock content %}
