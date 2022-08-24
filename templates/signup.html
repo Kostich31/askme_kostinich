@@ -1,0 +1,23 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% block link %}
+<link href="{% static "css/signup.css" %}" rel="stylesheet">
+{% endblock link %}
+    
+{% block content %}
+  <h2 id="new_question">Registration</h2>
+  <form role="form" class="login_form" action="{% url 'signup' %}" method="POST" novalidate>
+    {% csrf_token %}
+    {% for error in error_message %}
+      <p class="error_log_message">{{ error }}</p>
+    {% endfor %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <input required type="submit" class="btn btn-outline-secondary form_log" value="Sign up">
+    {% endbuttons %}
+  </form>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block link %}
+<link href="{% static "css/ask.css" %}" rel="stylesheet">
+{% endblock link %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% load bootstrap4 %}
+{% block content %}
+<h2 id="new_question">New Question</h2>
+<form class="ask_form" id="ask" method="POST" action="/ask/">
+  {% for error in error_message %}
+  <p class="error_log_message">{{ error }}</p>
+{% endfor %}
+{% csrf_token %}
+{% bootstrap_form form %}
+{% buttons %}
+      <input required type="submit" class="btn btn-outline-secondary input_form" value="ASK!">
+    </form>
+{% endbuttons %}
+{% endblock content %}

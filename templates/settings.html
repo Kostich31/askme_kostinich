@@ -1,0 +1,23 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% block link %}
+<link href="{% static "css/settings.css" %}" rel="stylesheet">
+{% endblock link %}
+
+{%block content%}
+{% load bootstrap4 %}
+    <h2 id="new_question">Settings</h2>
+
+    <form class="settings_form" method="post" name="form" novalidate>
+        {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+      {% buttons %}
+      <input required type="submit" class="btn btn-outline-secondary save_button" value="Save">
+            {% endbuttons %}
+  </form>
+{% endblock content%}

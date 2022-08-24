@@ -1,0 +1,20 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% block link %}
+<link href="{% static "css/tag.css" %}" rel="stylesheet">
+{% endblock link %}
+
+{% block content %}
+    <div class="new_hot_question">
+     Tag: {{ tag }}
+   </div>
+  {% for question in questions %}
+        {% include "include/singlequestion.html" %}
+    {% endfor %}
+{% endblock content %}
+{% block pagination %}
+{% include "include/pagination.html" with content=questions %}
+{% endblock pagination %}
